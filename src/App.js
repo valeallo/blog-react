@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import OurContacts from './Pages/OurContacts'
 import PageNotFound from './Pages/PageNotFound'
 import Privacy from './Pages/Privacy'
+import Login from './Pages/Login'
 
 function App() {
     return (
@@ -14,7 +15,8 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/About-us" element={<AboutUsStory />} />
                 <Route path="/our-contacts" element={<OurContacts />} />
-                < Route path="/privacy" element={<Privacy/>}/>
+                <Route path="/privacy" element={<Privacy/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

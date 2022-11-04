@@ -4,34 +4,42 @@ import ModalLogin from './ModalLogin'
 import { NavbarLinks } from '../Constants/NavBar'
 import { Link } from 'react-router-dom'
 
+
 const NavBar = () => {
     const [modalForm, setModalForm] = useState(false)
     return (
-        <nav>
-            <div className="flex bg-[#ff0099] p-4 text-white justify-between">
-                <div className="flex items-center">
-                    <div className="mr-4">
-                        <img src={LogoNavbar} width={150} alt="img" />
-                    </div>
-                </div>
-                <div>
-                {NavbarLinks.map((link) => {
-                            return (
-                                <Link  to={link.link}>
-                                    <p>{link.title}</p>
-                                </Link>
-                            )
-                        })}
-                </div>
-                <button
-                    className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-500 w-24  rounded-full bg-pink-400"
-                    onClick={() => setModalForm(true)}
-                >
-                    Login
-                </button>
+        <>
+        <div className="relative  w-screen">
+      <div className="flex items-center justify-between flex-wrap  bg-[#3D2C8D] p-4">
+        <div className="flex items-center flex-shrink-0 text-white">
+          <div className="flex">
+            <div></div>
+            <span
+              style={{ fontFamily: "Courier New" }}
+              className="font-semibold text-4xl tracking-tight mr-10"
+            >
+              My Personal Blog
+            </span>
+          </div>
+          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div className="text-sm lg:flex-grow">
+              {NavbarLinks.map((page, index) => {
+                return (
+                  <Link key={index} to={page.link}>
+                    <li className="block mt-4 lg:inline-block lg:mt-0 text-[#C996CC] hover:text-white mr-4">
+                      {page.title}
+                    </li>
+                  </Link>
+                );
+              })}
             </div>
-            {modalForm && <ModalLogin close={setModalForm} />}
-        </nav>
+          </div>
+        </div>
+        <div className="mr-5">
+        </div>
+      </div>   
+    </div>
+        </>
     )
 }
 
