@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../Componentes/NavBar'
-import Footer from '../Componentes/Footer'
-import ScrollToTopButton from '../Componentes/ScrollToTopButton'
+import NavBar from '../Components/NavBar'
+import Footer from '../Components/Footer'
+import ScrollToTopButton from '../Components/ScrollToTopButton'
 import Facebook from '../Assets/Facebook.jpg'
-import Twittwr from '../Assets/Twitter.jpg'
+import Twitter from '../Assets/Twitter.jpg'
 import Instagram from '../Assets/Instagram.jpg'
 import Pinterest from '../Assets/Pinterest.jpg'
-import FormContactUs from '../Componentes/FormContactUs'
+import FormContactUs from '../Components/FormContactUs'
 import FollowMe from '../Assets/FollowMe.jpg'
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
@@ -41,7 +41,7 @@ const OurContacts = () => {
                 <div className="flex flex-row justify-center pb-6">
                     <img className="w-[100px] p-2" src={Facebook} alt="facebook" />
                     <img className="w-[100px] p-2" src={Instagram} alt="instagram" />
-                    <img className="w-[100px] p-2" src={Twittwr} alt="twitter" />
+                    <img className="w-[100px] p-2" src={Twitter} alt="twitter" />
                     <img className="w-[100px] p-2" src={Pinterest} alt="pinterest" />
                 </div>
                 <div className='  container flex flex-col items-center justify-center p-4 mx-auto'>

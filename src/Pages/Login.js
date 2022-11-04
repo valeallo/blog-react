@@ -1,25 +1,26 @@
 import React from "react";
-import FormModalLogin from "../Componentes/FormModalLogin";
-import ModalLogin from "../Componentes/ModalLogin";
+import FormModalLogin from "../Components/FormModalLogin";
+import ModalLogin from "../Components/ModalLogin";
 
 
 const Login = () => {
   return (
     <>
      
-      <div className="h-screen flex items-center justify-center">
-        <div className="w-50 h-screen"
-        style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/1702949/pexels-photo-1702949.jpeg')",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-        ></div>
-        <FormModalLogin/>
+     <section className="h-screen w-full flex flex-wrap">
+                <div className="w-[50%]" style={{
+                    backgroundImage: `url("https://i.ibb.co/Ny5mQnf/1.jpg")`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center'
+                }}>
+                </div>
+      <div className=" w-[50%] flex flex-col justify-center items-center">
+        
+        <FormModalLogin className="m-auto"/>
+        
       </div>
-      
+      </section>
     </>
   );
 };

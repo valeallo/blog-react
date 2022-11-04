@@ -22,7 +22,7 @@ const useFetch = (url) => {
             }
         )()
     },[url])
-  return {data,dataLoading,err}
+  return {data, dataLoading, err}
 }
 
 export default useFetch
