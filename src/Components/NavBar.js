@@ -16,7 +16,7 @@ const NavBar = () => {
             <div></div>
             <span
               style={{ fontFamily: "Courier New" }}
-              className="font-semibold text-4xl tracking-tight mr-10"
+              className="font-semibold text-3xl tracking-tight mr-10"
             >
               My Personal Blog
             </span>
