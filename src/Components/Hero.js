@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <section className="py-14  bg-gradient-to-br from-[#C996CC] via-[#916BBF] to-[#1C0C5B] dark:text-gray-50"
+        <section className="py-14 w-screen  bg-gradient-to-br from-[#C996CC] via-[#916BBF] to-[#1C0C5B] dark:text-gray-50"
         // style={{
         //     backgroundImage:
         //       "url('')",

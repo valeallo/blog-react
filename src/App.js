@@ -6,6 +6,7 @@ import OurContacts from './Pages/OurContacts'
 import PageNotFound from './Pages/PageNotFound'
 import Privacy from './Pages/Privacy'
 import Login from './Pages/Login'
+import AddPost from './Pages/AddPost'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/About-us" element={<AboutUsStory />} />
                 <Route path="/our-contacts" element={<OurContacts />} />
+                <Route path="/create-post" element={<AddPost/>}/>
                 <Route path="/privacy" element={<Privacy/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<PageNotFound />} />

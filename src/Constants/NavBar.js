@@ -9,5 +9,10 @@ export const NavbarLinks=[
         id: 'loginLink',
         title: 'Login',
         link: '/login',
+    },
+    {
+        id: 'addPost',
+        title: 'create post',
+        link: '/create-post',
     }
 ]

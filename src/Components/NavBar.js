@@ -9,7 +9,7 @@ const NavBar = () => {
     const [modalForm, setModalForm] = useState(false)
     return (
         <>
-        <div className="relative  w-screen">
+        <div className=" w-screen">
       <div className="flex items-center justify-between flex-wrap  bg-[#3D2C8D] p-4">
         <div className="flex items-center flex-shrink-0 text-white">
           <div className="flex">

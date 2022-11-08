@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const usePost = (url, post) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
@@ -11,7 +11,13 @@ const useFetch = (url) => {
         try {
           setLoading(true);
 
-          const response = await fetch(url);
+          const response = await fetch(url, {
+            headers: {
+              'Content-type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(post),
+          });
           const res = await response.json();
           setData(res);
         } catch (error) {
@@ -26,4 +32,4 @@ const useFetch = (url) => {
   return { data, loading, error };
 };
 
-export default useFetch;
+export default usePost;
