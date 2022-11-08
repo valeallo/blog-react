@@ -3,7 +3,7 @@ import ReadMoreModal from './ReadMoreModal'
 import Card from './Card'
 import ScrollToTopButton from './ScrollToTopButton'
 import LikeAndDislikeButton from './LikeAndDislikeButton'
-import useFetch from './useFetch'
+import useFetch from '../Hooks/useFetch'
 import { FaHeart} from 'react-icons/fa';
 
 const Posts = () => {

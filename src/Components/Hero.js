@@ -2,7 +2,15 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+        <section className="py-14 w-screen  bg-gradient-to-br from-[#C996CC] via-[#916BBF] to-[#1C0C5B] dark:text-gray-50"
+        // style={{
+        //     backgroundImage:
+        //       "url('')",
+        //     backgroundPosition: "center",
+        //     backgroundRepeat: "no-repeat",
+        //     backgroundSize: "cover",
+        //   }}
+        >
             <div className="container mx-auto w-[70%] flex flex-col justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row">
                 <div className="flex flex-col space-y-4 text-center lg:text-left">
                     <h1 className="text-5xl font-bold leading-none">

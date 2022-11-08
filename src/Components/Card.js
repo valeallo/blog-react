@@ -33,30 +33,28 @@ const Card = ({ post, toggle, setSingle }) => {
 
     return (
         <>
-            <div className=" text-center w-[300px] border-separate border-spacing-2 border border-slate-400 rounded-[6%] ">
+            <div className=" text-center w-[300px] border-separate border-spacing-2 border border-slate-400 ">
                 <div className="flex item-center justify-center">
                     <img
                         src="https://picsum.photos/200"
                         alt="img"
-                        className="w-[295px] h-[200px] rounded-t-[8%] "
+                        className="w-[295px] h-[200px] "
                     />
                 </div>
                 <p className="bg-slate-50 border border-slate-300 text-l font-semibold">
                     {post.title.slice(0, 8)}
                 </p>
-                <h5 className=" bg-slate-100 text-center text-xl  text-pink-500 font-bold 0 border border-slate-300 ">
-                    Body
-                </h5>
-                <p className="bg-slate-50 border border-slate-300 text-l h-[50px] font-semibold">
+                
+                <p className="bg-slate-50 border border-slate-300 text-l h-[50px] ">
                     {`${post.body.slice(
                     0,
-                    40
+                    300
                 )}...`}</p>
                 <div className="button">
                     <span>
                         <button
                             onClick={() => [toggle(true), setSingle(post)]}
-                            className="bg-red-200 w-[100%]  text-xl text-pink-500 font-bold"
+                            className="bg-white w-[100%]  text-md text-pink-500 font-bold"
                         >
                             Read All
                         </button>

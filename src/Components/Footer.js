@@ -6,9 +6,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col  bg-[#ff0099] p-4 text-white justify-between mt-6">
+        <footer className="flex flex-col  bg-[#3D2C8D]  p-4 text-white justify-between mt-6">
             <div className=" container flex items-center justify-center p-4">
-                <img src={LogoNavbar} width={150} alt="img" />
+                {/* <img src={LogoNavbar} width={150} alt="img" /> */}
             </div>
             <div className="flex flex-col p-4 justify-evenly">
                 <div>

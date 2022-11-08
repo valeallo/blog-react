@@ -1,15 +1,17 @@
 import React from 'react'
-import NavBar from '../Componentes/NavBar'
-import Hero from '../Componentes/Hero'
-import Posts from '../Componentes/Posts'
-import Footer from '../Componentes/Footer'
+import NavBar from '../Components/NavBar'
+import Hero from '../Components/Hero'
+import Posts from '../Components/Posts'
+import Footer from '../Components/Footer'
+import AllPosts from '../Components/AllPosts'
+import NewPostForm from '../Components/NewPostForm'
 
 const Home = () => {
     return (
         <>
             <NavBar />
             <Hero />
-            <Posts />
+            <AllPosts />
             <Footer />
         </>
     )
