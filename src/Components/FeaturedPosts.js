@@ -1,30 +1,30 @@
 import React from 'react'
 import useFetch from '../Hooks/useFetch'
-import BlogPost from './BlogPost'
+import SingleFeatured from './SingleFeatured'
 
-
-const AllPosts = () => {
-    const url = "http://localhost:3030/posts"
-    //const url = "https://jsonplaceholder.typicode.com/posts"
+const FeaturedPosts = () => {
+    const url = "http://localhost:3030/featured"
+    
     const {data, loading, error}= useFetch(url)
   return (
     <>
-        <div className='flex flex-row justify-evenly w-full flex-wrap space-y-4'>
+        <div className='flex flex-row justify-start w-full flex-wrap space-y-3  '>
         {loading && !error && <p>page is loading</p> }
       {!data && !loading && error && (
         <p>Oops qualcosa non è andata a buon fine...</p>
       )}
       {data &&
         !error &&
-        data.slice(0, 6).map((post, index) => {
+        data.slice(0, 12).map((post, index) => {
           
           return (
-            <BlogPost key={index} post={post}/>
+            <SingleFeatured key={index} post={post}/>
           );
         })}
         </div>
     </>
   )
+
 }
 
-export default AllPosts
+export default FeaturedPosts
