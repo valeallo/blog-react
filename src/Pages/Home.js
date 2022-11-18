@@ -14,9 +14,8 @@ const Home = () => {
                 <div className="w-[65%] h-full">
                     <AllPosts />
                 </div>
-                <div className="w-[25%]">
+                <div className="hidden md:block w-[35%]">
                     <h2>Discover our Featured Posts:</h2>
-                    <hr/>
                     <FeaturedPosts />
                 </div>
             </div>

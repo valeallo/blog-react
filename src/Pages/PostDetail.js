@@ -2,6 +2,7 @@ import React from 'react'
 import useFetch from '../Hooks/useFetch'
 import { useParams } from 'react-router-dom'
 
+
 const PostDetail = () => {
     const { id } = useParams()
     const url = `http://localhost:3030/posts/${id}`

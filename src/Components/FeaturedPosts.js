@@ -3,7 +3,7 @@ import useFetch from '../Hooks/useFetch'
 import SingleFeatured from './SingleFeatured'
 
 const FeaturedPosts = () => {
-    const url = "http://localhost:3030/featured"
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/featured`
     
     const {data, loading, error}= useFetch(url)
   return (
