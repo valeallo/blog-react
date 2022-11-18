@@ -2,7 +2,7 @@ export const NavbarLinks=[
     {
         id: 'homeLink',
         title: 'Home',
-        link: '/home',
+        link: '/',
     },
 
     {
@@ -12,7 +12,7 @@ export const NavbarLinks=[
     },
     {
         id: 'addPost',
-        title: 'create post',
+        title: 'Create Post',
         link: '/create-post',
     }
 ]

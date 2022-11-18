@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import ReadMoreModal from './ReadMoreModal'
+import ReadMoreModal from '../ReadMoreModal'
 import Card from './Card'
-import ScrollToTopButton from './ScrollToTopButton'
-import LikeAndDislikeButton from './LikeAndDislikeButton'
-import useFetch from '../Hooks/useFetch'
+import ScrollToTopButton from '../ScrollToTopButton'
+import LikeAndDislikeButton from '../LikeAndDislikeButton'
+import useFetch from '../../Hooks/useFetch'
 import { FaHeart} from 'react-icons/fa';
 
 const Posts = () => {
