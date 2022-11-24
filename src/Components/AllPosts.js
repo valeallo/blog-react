@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import BlogPost from './BlogPost'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts, post, error, loading } from '../States/postSlice'
+import ScrollToTopButton from './ScrollToTopButton'
 
 
 
@@ -30,6 +31,7 @@ const AllPosts = () => {
           );
         })}
         </div>
+        <ScrollToTopButton />
     </>
   )
 }

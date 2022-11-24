@@ -3,13 +3,27 @@ import React, { useState } from 'react'
 const CreateNewAccount = () => {
     const [formValue, setFormValue] = useState({})
 
-    const saveToLocalstorage = () => {
-        localStorage.setItem('Faty', JSON.stringify(formValue))
+    const saveToLocalStorage = () => {
+        localStorage.setItem('new_user', JSON.stringify(formValue))
     }
     return (
-        <form>
-            <h3>Create a New Account</h3>
-            <div className="container">
+        <form className='bg-[#d5d5fa] w-full h-full p-10 flex flex-col items-center justify-center'>
+            
+            <div className="container flex flex-col items-center justify-center">
+            <h3 className='text-xl mb-4'>Create a New Account</h3>
+                <div>
+                    <input
+                        className="p-2 rounded-lg mb-2"
+                        type="text"
+                        placeholder="Username"
+                        onChange={(e) =>
+                            setFormValue({
+                                ...formValue,
+                                userName: e.target.value,
+                            })
+                        }
+                    ></input>
+                </div>
                 <div>
                     <input
                         className="p-2 rounded-lg mb-2"
@@ -39,23 +53,8 @@ const CreateNewAccount = () => {
 
                 <div>
                     <input
-                        className="p-2 rounded-lg mb-2"
-                        type="textbox"
-                        placeholder="gender"
-                        onChange={(e) =>
-                            setFormValue({
-                                ...formValue,
-                                firstName: e.target.value,
-                            })
-                        }
-                    ></input>
-                </div>
-
-                <div>
-                    <input
-                        className="p-2 rounded-lg mb-2"
+                        className="p-2 rounded-lg mb-2 w-full"
                         type="date"
-                        min="1979-12-31"
                         onChange={(e) =>
                             setFormValue({
                                 ...formValue,
@@ -65,34 +64,8 @@ const CreateNewAccount = () => {
                     ></input>
                 </div>
 
-                <div>
-                    <input
-                        className="p-2 rounded-lg mb-2"
-                        type="number"
-                        min="18"
-                        placeholder="Age"
-                        onChange={(e) =>
-                            setFormValue({
-                                ...formValue,
-                                age: e.target.value,
-                            })
-                        }
-                    ></input>
-                </div>
 
-                <div>
-                    <input
-                        className="p-2 rounded-lg mb-2"
-                        type="tel"
-                        placeholder="Phone number"
-                        onChange={(e) =>
-                            setFormValue({
-                                ...formValue,
-                                phoneNumber: e.target.value,
-                            })
-                        }
-                    ></input>
-                </div>
+
 
                 <div>
                     <input
@@ -122,7 +95,7 @@ const CreateNewAccount = () => {
                 </div>
                 <button
                     className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple-200 duration-300  p-2 rounded-lg mb-2 bg-purple-100 "
-                    onClick={() => saveToLocalstorage()}
+                    onClick={() => saveToLocalStorage()}
                 >
                     Create Account
                 </button>

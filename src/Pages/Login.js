@@ -1,6 +1,6 @@
 import React from "react";
-import FormModalLogin from "../Components/FormModalLogin";
-import ModalLogin from "../Components/ModalLogin";
+import CreateNewAccount from "../Components/CreateNewAccount";
+import FormModalLogin from "../Components/old/FormModalLogin";
 
 
 const Login = () => {
@@ -16,8 +16,8 @@ const Login = () => {
                 }}>
                 </div>
       <div className=" w-[50%] flex flex-col justify-center items-center">
+        <CreateNewAccount className="m-auto "/>
         
-        <FormModalLogin className="m-auto"/>
         
       </div>
       </section>

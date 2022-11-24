@@ -45,6 +45,6 @@ const postSlice = createSlice( {
 export const totalPosts = (state) => state.posts.totalPosts
 export const error = (state) => state.posts.error 
 export const post = (state) => state.posts.post
-export const loading = (state) => state.posts.loading
+export const loading = (state) => state.posts.isLoading
 
 export default postSlice.reducer

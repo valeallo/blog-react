@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import LogoNavbar from '../Assets/Logo.png'
 import ModalLogin from './ModalLogin'
 import { NavbarLinks } from '../Constants/NavBar'
 import { Link } from 'react-router-dom'
+import LoginModal from './LoginModal'
 
 const NavBar = () => {
     const [modalForm, setModalForm] = useState(false)
@@ -26,7 +26,7 @@ const NavBar = () => {
       return () => {
         window.removeEventListener('storage', checkUserData)
       }
-    }, [])
+    }, ['storage'])
 
     return (
         <>
@@ -56,7 +56,16 @@ const NavBar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mr-5"></div>
+                    <div className="mr-5">
+                    <button
+                    className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-500 w-24  rounded-full bg-pink-400"
+                    onClick={() => setModalForm(true)}
+                >
+                    Login
+                </button>
+
+                    </div>
+                    {modalForm && <LoginModal close={setModalForm} />}
                 </div>
             </div>
         </>

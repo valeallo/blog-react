@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import usePost from '../Hooks/usePost'
-import axios from 'axios'
+
 
 
 const NewPostForm = () => {
@@ -26,7 +26,7 @@ const NewPostForm = () => {
 
     return (
         <>
-            <form className='flex flex-col '>
+            <form className='flex flex-col min-h-screen'>
                 <input
                     className="p-2 rounded-lg mb-2"
                     type="title"
@@ -49,7 +49,7 @@ const NewPostForm = () => {
                         })
                     }
                 ></input>
-                 <input
+                 <textarea
                     className="p-2 rounded-lg mb-2"
                     type="body"
                     placeholder="articolo"
@@ -59,7 +59,7 @@ const NewPostForm = () => {
                             body: e.target.value,
                         })
                     }
-                ></input>
+                ></textarea>
                 <input
                     className="p-2 rounded-lg mb-2"
                     type="author"

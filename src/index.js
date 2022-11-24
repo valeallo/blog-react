@@ -6,10 +6,12 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import postReducer from './States/postSlice'
 import favoriteReducer from './States/favoriteSlice'
+import loginReducer from './States/loginSlice'
 
 const reducer = combineReducers({
     posts: postReducer,
     favorites: favoriteReducer,
+    userData:loginReducer
     
 })
 

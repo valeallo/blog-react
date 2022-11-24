@@ -2,20 +2,21 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { insertInFavorite, favorite, resetFavorite } from '../States/favoriteSlice'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const BlogPost = ({ post }) => {
     const dispatch = useDispatch()
-
+    
     const AllFavorites = useSelector(favorite)
 
     
     return (
         <div className="flex flex-col bg-[#ffffff] max-w-[300px] max-h-[300px] rounded-md hover:scale-105 hover:shadow-xl">
-            <div className="h-[70%] w-[100%] overflow-hidden rounded-md">
+            <div className="h-[70%] w-[100%]  overflow-hidden rounded-md">
                 <img
                     src={post.img}
                     className="object-cover object-center w-full"
-                />
+                /> 
             </div>
             <div className="flex flex-col justify-between items-center space-y-1 p-4 h-[35%]">
                 <div className="flex flex-col w-full">
@@ -40,7 +41,12 @@ const BlogPost = ({ post }) => {
                         {post.body.slice(0, 50)}...
                     </small>
                 </div>
-                <div className="flex flex-row justify-end w-full">
+                <div className="flex flex-row justify-between w-full">
+                    <FavoriteBorderIcon onClick={() => {
+                            
+                            dispatch(insertInFavorite(post))
+                            console.log(AllFavorites)
+                        }}/>
                     <Link
                         to={`/posts/${post._id}`}
                         className="text-xs text-[#916BBF] underline"

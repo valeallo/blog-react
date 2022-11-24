@@ -1,14 +1,28 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loggedInUser } from '../../States/loginSlice'
 
 const FormModalLogin = () => {
     const [formValue, setFormValue] = useState({})
+    console.log(formValue);
 
-    const saveToLocalstorage = () => {
-        localStorage.setItem('Faty', JSON.stringify(formValue))
+
+    const dispatch = useDispatch()
+    
+    
+    const loginUser = () => {
+        console.log('clicked')
+        const formData = {
+            email:formValue.email,
+            password: formValue.password
+        }
+        const content = JSON.stringify(formValue)
+       
+        dispatch(loggedInUser(content))
     }
     return (
-        <form>
-            <div className="container">
+        <form >
+            
                 <div>
                     <input
                         className="p-2 rounded-lg mb-2"
@@ -27,21 +41,17 @@ const FormModalLogin = () => {
                         className="p-2 rounded-lg mb-2"
                         type="password"
                         placeholder="password"
-                        onChange={(e) =>
+                        onChange={(e) => {
                             setFormValue({
                                 ...formValue,
                                 password: e.target.value,
                             })
+                            }
                         }
                     ></input>
                 </div>
-                <button
-                    className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple-200 p-2 rounded-lg mb-2 bg-purple-100 "
-                    onClick={() => saveToLocalstorage()}
-                >
-                    Save
-                </button>
-            </div>
+                <button onClick={console.log('clicked')}>Click</button>
+            
         </form>
     )
 }
