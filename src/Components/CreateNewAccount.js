@@ -63,10 +63,6 @@ const CreateNewAccount = () => {
                         }
                     ></input>
                 </div>
-
-
-
-
                 <div>
                     <input
                         className="p-2 rounded-lg mb-2"

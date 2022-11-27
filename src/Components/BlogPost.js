@@ -16,8 +16,7 @@ const BlogPost = ({ post }) => {
         dispatch(insertInFavorite(post))
         console.log(AllFavorites)
     }
-    useEffect( () =>{ 
-        
+    useEffect( () =>{   
         if (AllFavorites.includes(post)){
             setFavorite(true)
         }
@@ -41,7 +40,6 @@ const BlogPost = ({ post }) => {
                             {post.author}
                         </span>
                     </div>
-
                     <small className="text-sm text-[#a49ea6]">
                         {post.body.slice(0, 50)}...
                     </small>
