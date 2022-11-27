@@ -52,10 +52,7 @@ const BlogPost = ({ post }) => {
                     </small>
                 </div>
                 <div className="flex flex-row justify-between w-full">
-                <div onClick={() => {
-                            
-                            
-                        }}>    
+                <div onClick={addFavorite}>    
                 {isFavorite? <FavoriteIcon/> : <FavoriteBorderIcon />}
                 </div>
                     <Link
