@@ -42,8 +42,6 @@ const BlogPost = ({ post }) => {
                         </span>
                     </div>
 
-
-
                     <small className="text-sm text-[#a49ea6]">
                         {post.body.slice(0, 50)}...
                     </small>
