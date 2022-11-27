@@ -42,17 +42,14 @@ const BlogPost = ({ post }) => {
                         </span>
                     </div>
 
-                    <button className='p-2 bg-red-200'
-                    >
-                        favs
-                    </button>
+
 
                     <small className="text-sm text-[#a49ea6]">
                         {post.body.slice(0, 50)}...
                     </small>
                 </div>
                 <div className="flex flex-row justify-between w-full">
-                <div onClick={addFavorite}>    
+                <div onClick={addFavorite()}>    
                 {isFavorite? <FavoriteIcon/> : <FavoriteBorderIcon />}
                 </div>
                     <Link
