@@ -16,11 +16,16 @@ const LoginModal = ({ close }) => {
     const dispatch = useDispatch()
     
     
-    const loginUser = () => {
-        console.log('1: ' + formData.password)
-        console.log('2: ' + formData.email)
+    const loginUser = (e) => {
+        e.preventDefault()
+
         
         dispatch(loggedInUser(data))
+        setTimeout(() =>{
+            close(false)
+            window.location.reload(false)
+        }, 1500)
+        
     }
 
     return (
@@ -45,8 +50,8 @@ const LoginModal = ({ close }) => {
                             </div>
                             <form
                                 className="mt-8 space-y-6"
-                                action=''
-                                method='POST'
+
+
                                 onSubmit={loginUser}
                             >
                                 <div className="-space-y-px rounded-md shadow-sm">
