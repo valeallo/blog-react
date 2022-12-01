@@ -1,32 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import ModalLogin from './ModalLogin'
 import { NavbarLinks } from '../Constants/NavBar'
 import { Link } from 'react-router-dom'
 import LoginModal from './LoginModal'
 
 const NavBar = () => {
     const [modalForm, setModalForm] = useState(false)
-    const [userData, setUserData] = useState(true)
+    const [userData, setUserData] = useState(false)
+    const [loggedInUser, setLoggedInUser] = useState(null)
     
-
-
     useEffect(() => {
-      function checkUserData() {
-        const item = localStorage.getItem('userData')
-    
-        if (item) {
-          setUserData(true)
+        const loggedInUser = localStorage.getItem('user')
+        if (loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser)
+            setLoggedInUser(foundUser)
         }
-        else {
-        setUserData(false)}
-      }
-    
-      window.addEventListener('storage', checkUserData)
-    
-      return () => {
-        window.removeEventListener('storage', checkUserData)
-      }
-    }, ['storage'])
+    }, [])
+
+    const clearStorage = () => {
+        localStorage.clear()
+        setTimeout((window.location.reload(false)), 800)
+        
+    }
 
     return (
         <>
@@ -57,13 +51,18 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div className="mr-5">
+                {loggedInUser?
+                    <button
+                    onClick={clearStorage}
+                    >Logout</button>
+                    :
                     <button
                     className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-500 w-24  rounded-full bg-pink-400"
                     onClick={() => setModalForm(true)}
                 >
                     Login
                 </button>
-
+}
                     </div>
                     {modalForm && <LoginModal close={setModalForm} />}
                 </div>

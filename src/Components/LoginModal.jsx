@@ -15,11 +15,16 @@ const LoginModal = ({ close }) => {
     const dispatch = useDispatch()
     
     
-    const loginUser = () => {
-        console.log('1: ' + formData.password)
-        console.log('2: ' + formData.email)
+    const loginUser = (e) => {
+        e.preventDefault()
+
         
         dispatch(loggedInUser(data))
+        setTimeout(() =>{
+            close(false)
+            window.location.reload(false)
+        }, 1500)
+        
     }
 
     return (
@@ -44,6 +49,7 @@ const LoginModal = ({ close }) => {
                             </div>
                             <form
                                 className="mt-8 space-y-6"
+                                onSubmit={loginUser}
                             >
                                 <div className="-space-y-px rounded-md shadow-sm">
                                     <div>
@@ -102,7 +108,7 @@ const LoginModal = ({ close }) => {
 
                                 <div>
                                     <button
-                                        onClick={loginUser}
+                                        type='submit'
                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-[#4e38b3] py-2 px-4 text-sm font-medium text-white hover:bg-[#3D2C8D] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     >
 
