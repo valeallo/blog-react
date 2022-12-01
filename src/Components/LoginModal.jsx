@@ -6,6 +6,7 @@ import { loggedInUser, user } from '../States/loginSlice'
 
 const LoginModal = ({ close }) => {
     const [formData, setFormData] = useState({})
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/login`
     const data = {
         email: formData.email,
         password: formData.password
@@ -49,6 +50,8 @@ const LoginModal = ({ close }) => {
                             </div>
                             <form
                                 className="mt-8 space-y-6"
+
+
                                 onSubmit={loginUser}
                             >
                                 <div className="-space-y-px rounded-md shadow-sm">
