@@ -48,7 +48,7 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div className="mr-5">
-                {loggedInUser?
+                {/* {loggedInUser?
                     <button
                     onClick={clearStorage}
                     >Logout</button>
@@ -59,7 +59,7 @@ const NavBar = () => {
                 >
                     Login
                 </button>
-}
+} */}
                     </div>
                     {modalForm && <LoginModal close={setModalForm} />}
                 </div>
