@@ -3,31 +3,29 @@ import BlogPost from './BlogPost'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts, post, error, loading } from '../States/postSlice'
 import ScrollToTopButton from './ScrollToTopButton'
+import useFetch from '../Hooks/useFetch'
 
 
 
 const AllPosts = () => {
-    const dispatch = useDispatch()
-    const Posts = useSelector(post)
-    const err = useSelector(error)
-    const isLoading = useSelector(loading)
-  
-  useEffect(()=>{
-    dispatch(getPosts(post))
-  }, [dispatch])
+    const url = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`
+    
+    const {data, loading, error}= useFetch(url)
+
+
   return (
     <>
         <div className='flex justify-evenly w-full flex-wrap space-y-4 items-center'>
-        {isLoading && !err && <p>page is loading</p> }
-      {!Posts && !isLoading && err && (
+        {loading && !error && <p>page is loading</p> }
+      {!data && !loading && error && (
         <p>Oops qualcosa non è andata a buon fine...</p>
       )}
-      {Posts &&
-        !err &&
-        Posts.map((post, index) => {
-          
+      {data &&
+        !error &&
+        data.map((post, index) => {
           return (
-            <BlogPost key={index} post={post}/>
+            //<div>{post.title}</div>
+             <BlogPost key={index} post={post}/>
           );
         })}
         </div>

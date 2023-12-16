@@ -12,7 +12,6 @@ const reducer = combineReducers({
     posts: postReducer,
     favorites: favoriteReducer,
     userData:loginReducer
-    
 })
 
 const store = configureStore ({
